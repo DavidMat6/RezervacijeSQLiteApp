@@ -15,7 +15,7 @@ namespace RezervacijeSQLiteApp
     public partial class Form1 : Form
     {
         private List<Rezervacija> rezervacije = new List<Rezervacija>();
-        private string connectionString = "Data Source=baza.db";
+        private string connectionString = "Data Source=rezervacije.db";
 
         public Form1()
         {
@@ -46,6 +46,8 @@ namespace RezervacijeSQLiteApp
             }
             dataGridView1.DataSource = null;
             dataGridView1.DataSource = rezervacije;
+            dataGridView1.Columns["Datum"].Visible = false;
+            dataGridView1.Columns["Vrijeme"].Visible = false;
         }
 
         private void btnSpremi_Click(object sender, EventArgs e)
